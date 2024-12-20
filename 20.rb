@@ -21,19 +21,6 @@ def nbs_no_diag(x, y, d)
   ].select{|c| c.first >= 0 && c.last >= 0 && c.first < d.first.length && c.last < d.length }
 end
 
-def nbs_with_diag(x, y, d)
-  [
-    [x - 1, y],
-    [x + 1, y],
-    [x, y - 1],
-    [x, y + 1],
-    [x - 1, y - 1],
-    [x + 1, y - 1],
-    [x - 1, y + 1],
-    [x + 1, y + 1]
-  ].select{|c| c.first >= 0 && c.last >= 0 && c.first < d.first.length && c.last < d.length }
-end
-
 res = 0
 
 s = nil
@@ -75,7 +62,7 @@ while q.any?
   end
 end
 
-# this is the way I did it, but not recommended: was super long
+# this is the way I did Part1, but not recommended: was super long
 # res = []
 #   d.length.times do |j|
 #     d.first.length.times do |i|
